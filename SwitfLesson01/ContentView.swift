@@ -7,31 +7,77 @@
 
 import SwiftUI
 
-struct ImageView: View {
-    var body: some View {
-        Image("User")
-            .resizable()
-            .frame(width: 100, height: 100)
-            .cornerRadius(500)
-    }
-}
-
-struct NameView: View {
-    var body: some View {
-        Text("Farhan Augustiansyah")
-            .foregroundColor(Color.black)
-    }
-}
-
 struct ContentView: View {
     var body: some View {
-        ImageView()
-        
+        ZStack {
+            Image("User")
+                .resizable()
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack(spacing: 20) {
+                ProfileView()
+                FormBox()
+            }
+            .padding(.all, 20)
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct ProfileView: View {
+    var body: some View {
+        VStack {
+            Image("User")
+                .resizable()
+                .frame(width: 100, height: 100)
+                .cornerRadius(500)
+            
+            Text("Hello Realfriend")
+                .foregroundColor(Color.white)
+        }
+    }
+}
+
+struct FormBox: View {
+    
+    // state username, to store input from username
+    @State var username: String = ""
+    
+    // state password, to store input from password
+    @State var password: String = ""
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            // username
+            Text("Username").font(.callout).bold()
+            TextField("Username...", text:$username)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            
+            // password
+            Text("Password").font(.callout).bold()
+            SecureField("Password...", text:$password)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            
+            // button
+            Button(action: {print("Hello Button")}) {
+                HStack {
+                    Spacer()
+                    Text("Sign In")
+                    Spacer()
+                }
+            }
+            .padding()
+            .background(Color.black)
+            .cornerRadius(20)
+            .foregroundColor(Color.white)
+        }
+        .padding(.all, 30)
+        .background(Color.white)
+        .cornerRadius(10)
     }
 }
