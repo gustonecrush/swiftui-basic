@@ -9,16 +9,93 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ZStack {
-            Image("User")
-                .resizable()
-                .edgesIgnoringSafeArea(.all)
-            
-            VStack(spacing: 20) {
-                ProfileView()
-                FormBox()
-            }
-            .padding(.all, 20)
+        NavigationView {
+            Form {
+                
+                // Section profile
+                Section() {
+                    NavigationLink(destination: AnotherPage()) {
+                        HStack {
+                            // profile image
+                            Image("User")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                                .clipShape(Circle()) // to make circle the image
+                            
+                            // name and status
+                            VStack(alignment: .leading) {
+                                Text("Farhan Augustiansyah").font(.headline)
+                                Text("IOS Enthusiast").font(.caption)
+                            }
+                        }
+                        .padding(.top, 10)
+                        .padding(.bottom, 10)
+                    }
+                }
+                
+                // Section general setting
+                Section(header: Text("General Settings")) {
+                    NavigationLink(destination: AnotherPage()) {
+                        HStack(spacing: 20) {
+                            Image(systemName: "star.fill")
+                                .frame(width: 35, height: 35)
+                                .background(Color.orange)
+                                .cornerRadius(10)
+                                .foregroundColor(Color.white)
+                            
+                            Text("Star Messages")
+                        }
+                        .padding(.top, 10)
+                        .padding(.bottom, 10)
+                    }
+                    
+                    NavigationLink(destination: AnotherPage()) {
+                        HStack(spacing: 20) {
+                            Image(systemName: "tv")
+                                .frame(width: 35, height: 35)
+                                .background(Color.green)
+                                .cornerRadius(10)
+                                .foregroundColor(Color.white)
+                            
+                            Text("Whatsapp Web/Desktop")
+                        }
+                        .padding(.top, 10)
+                        .padding(.bottom, 10)
+                    }
+                }
+                
+                // Account Setting
+                Section(header: Text("General Settings")) {
+                    NavigationLink(destination: AnotherPage()) {
+                        HStack(spacing: 20) {
+                            Image(systemName: "person")
+                                .frame(width: 35, height: 35)
+                                .background(Color.blue)
+                                .cornerRadius(10)
+                                .foregroundColor(Color.white)
+                            
+                            Text("Account")
+                        }
+                        .padding(.top, 10)
+                        .padding(.bottom, 10)
+                    }
+                    
+                    NavigationLink(destination: AnotherPage()) {
+                        HStack(spacing: 20) {
+                            Image(systemName: "phone.circle")
+                                .frame(width: 35, height: 35)
+                                .background(Color.green)
+                                .cornerRadius(10)
+                                .foregroundColor(Color.white)
+                            
+                            Text("Chat")
+                        }
+                        .padding(.top, 10)
+                        .padding(.bottom, 10)
+                    }
+                }
+                
+            }.navigationBarTitle("Setting")
         }
     }
 }
@@ -29,55 +106,8 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct ProfileView: View {
+struct AnotherPage: View {
     var body: some View {
-        VStack {
-            Image("User")
-                .resizable()
-                .frame(width: 100, height: 100)
-                .cornerRadius(500)
-            
-            Text("Hello Realfriend")
-                .foregroundColor(Color.white)
-        }
-    }
-}
-
-struct FormBox: View {
-    
-    // state username, to store input from username
-    @State var username: String = ""
-    
-    // state password, to store input from password
-    @State var password: String = ""
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            // username
-            Text("Username").font(.callout).bold()
-            TextField("Username...", text:$username)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-            
-            // password
-            Text("Password").font(.callout).bold()
-            SecureField("Password...", text:$password)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-            
-            // button
-            Button(action: {print("Hello Button")}) {
-                HStack {
-                    Spacer()
-                    Text("Sign In")
-                    Spacer()
-                }
-            }
-            .padding()
-            .background(Color.black)
-            .cornerRadius(20)
-            .foregroundColor(Color.white)
-        }
-        .padding(.all, 30)
-        .background(Color.white)
-        .cornerRadius(10)
+        Text("Another Page")
     }
 }

@@ -11,6 +11,7 @@
 		0991D26D296FF66F004BCECB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0991D26C296FF66F004BCECB /* ContentView.swift */; };
 		0991D26F296FF672004BCECB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0991D26E296FF672004BCECB /* Assets.xcassets */; };
 		0991D272296FF672004BCECB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0991D271296FF672004BCECB /* Preview Assets.xcassets */; };
+		0991D27B297004DE004BCECB /* ContentView01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0991D27A297004DE004BCECB /* ContentView01.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		0991D26E296FF672004BCECB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0991D271296FF672004BCECB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0991D279296FFAC8004BCECB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0991D27A297004DE004BCECB /* ContentView01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView01.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				0991D26C296FF66F004BCECB /* ContentView.swift */,
 				0991D26E296FF672004BCECB /* Assets.xcassets */,
 				0991D270296FF672004BCECB /* Preview Content */,
+				0991D27A297004DE004BCECB /* ContentView01.swift */,
 			);
 			path = SwitfLesson01;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0991D27B297004DE004BCECB /* ContentView01.swift in Sources */,
 				0991D26D296FF66F004BCECB /* ContentView.swift in Sources */,
 				0991D26B296FF66F004BCECB /* SwitfLesson01App.swift in Sources */,
 			);
